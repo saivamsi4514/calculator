@@ -1,0 +1,111 @@
+/* Style the heading */
+#heading {
+    text-align: center; /* Centers the text horizontally */
+    margin: 20px 0;    /* Adds space above and below the heading */
+    font-size: 2.5rem;  /* Sets the font size */
+    color: #fff;        /* Sets the text color */
+    position: absolute;  /* Positions the heading relative to the nearest positioned ancestor */
+    top: 0;             /* Positions it at the top */
+    left: 50%;          /* Starts from the middle of the page */
+    transform: translateX(-50%); /* Centers it horizontally */
+     /* Adds the Poppins font */
+    
+}
+
+
+/* Center the calculator div */
+#main-div {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 320px;
+}
+
+/* Style the input field */
+#input {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+    text-align: right;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style button container */
+#main-div div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+/* General button styles */
+button {
+    width: 48%;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0bb76;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button {
+    width: 80px; /* Increase width for larger buttons */
+    height: 80px; /* Increase height for larger buttons */
+    margin: 10px; /* Space between buttons */
+    font-size: 1.5rem; /* Increase font size for better visibility */
+    border: none;
+    border-radius: 50%; /* Make buttons round */
+    background-color: #f0bb76;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Container for buttons */
+.button-main-div {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: center; /* Center buttons horizontally */
+    width: 100%; /* Ensure it takes full width */
+    max-width: 700px; /* Optional: set a max width */
+    margin: auto; /* Center container on the page */
+}
+
+
+/* AC button - different color */
+button[type="reset"] {
+    background-color: #36a8f4; /* Red color for AC */
+}
+
+/* Button hover effects */
+button:hover {
+    background-color: #6ee974;
+}
+
+button[type="reset"]:hover {
+    background-color: #2fbad3; /* Darker red for AC */
+}
+
+/* For smaller screens */
+@media (max-width: 360px) {
+    #main-div {
+        width: 90%;
+    }
+
+    button {
+        font-size: 1rem;
+        height: 45px;
+    }
+
+    #input {
+        height: 45px;
+    }
+}

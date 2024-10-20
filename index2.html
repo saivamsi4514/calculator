@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> 
+    <link rel="icon" href="scientific-calculator.png" type="image/png"> 
+    <title>Scientific Calculator</title>
+    <style>
+        body {
+            background-image: url('Mustang.jpg'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            height: 100vh; 
+            margin: 0; 
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #heading {
+            text-align: center;
+            margin: 20px 0;    
+            font-size: 3rem;    
+            color: #fff;        
+            position: absolute;  
+            top: 0;             
+            left: 50%;          
+            transform: translateX(-50%); 
+            font-family: 'Poppins', sans-serif; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+            letter-spacing: 1px; 
+        }
+
+        #main-div {
+            background: rgba(255, 255, 255, 0.15); 
+            border-radius: 15px; 
+            padding: 20px; 
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); 
+            width: 400px; 
+            text-align: center; 
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        #main-div::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit; 
+            opacity: 0.3; 
+            z-index: -1; 
+            filter: blur(15px); 
+        }
+
+        input {
+            color: white; 
+            background: transparent; 
+            border: none; 
+            font-size: 1.5rem; 
+            text-align: center; 
+            margin-bottom: 10px; /* Added margin for spacing */
+        }
+
+        button {
+            width: 50px; 
+            height: 50px; 
+            margin: 5px; 
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50%; 
+            background-color: #f0bb76;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .wide {
+            width: 110px; /* Wider buttons for functions */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">SCIENTIFIC CALCULATOR</h1>
+    <div id="main-div">
+        <input type="text" title="input" id="input" name="inputName" disabled>
+        
+        <div id="first-row">
+            <button type="button" data-number="1">1</button>
+            <button type="button" data-number="2">2</button>
+            <button type="button" data-number="3">3</button>
+            <button type="button" data-operation="+">+</button>
+            <button type="button" id="clear">AC</button>
+        </div>
+
+        <div id="second-row">
+            <button type="button" data-number="4">4</button>
+            <button type="button" data-number="5">5</button>
+            <button type="button" data-number="6">6</button>
+            <button type="button" data-operation="-">-</button>
+            <button type="button" data-operation="CE">CE</button>
+        </div>
+
+        <div id="third-row">
+            <button type="button" data-number="7">7</button>
+            <button type="button" data-number="8">8</button>
+            <button type="button" data-number="9">9</button>
+            <button type="button" data-operation="*">*</button>
+            <button type="button" data-operation="/">/</button>
+        </div>
+
+        <div id="fourth-row">
+            <button type="button" data-number="0">0</button>
+            <button type="button" data-operation="=">=</button>
+            <button type="button" data-operation="sin">sin</button>
+            <button type="button" data-operation="cos">cos</button>
+            <button type="button" data-operation="tan">tan</button>
+        </div>
+
+        <div id="fifth-row">
+            <button type="button" data-operation="cot">cot</button>
+            <button type="button" data-operation="sec">sec</button>
+            <button type="button" data-operation="csc">csc</button>
+            <button type="button" data-operation="sqrt">√</button>
+            <button type="button" data-operation="log">log</button>
+        </div>
+
+        <div id="sixth-row">
+            <button type="button" data-operation="ln">ln</button>
+            <button type="button" data-operation="π">π</button>
+            <button type="button" data-operation="e">e</button>
+            <button type="button" data-operation="pow">x^y</button>
+            <button type="button" data-operation="%">%</button>
+        </div>
+
+        <div id="seventh-row">
+            <button type="button" data-operation="!">n!</button>
+            <button type="button" data-operation="Σx">Σx</button>
+            <button type="button" data-operation="Σx²">Σx²</button>
+            <button type="button" data-operation="σx">σx</button>
+            <button type="button" data-operation="σn">σn</button>
+        </div>
+
+        <div id="eighth-row">
+            <button type="button" data-operation="MR">MR</button>
+            <button type="button" data-operation="M+">M+</button>
+            <button type="button" data-operation="M-">M-</button>
+            <button type="button" data-operation="MC">MC</button>
+            <button type="button" data-operation="x²">x²</button>
+        </div>
+
+        <div id="ninth-row">
+            <button type="button" data-operation="1/x">1/x</button>
+            <button type="button" data-operation="x^3">x³</button>
+            <button type="button" data-operation="exp">exp</button>
+            <button type="button" data-operation="mean">mn</button>
+            <button type="button" data-operation="variance">var</button>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = ""; 
+        let memoryValue = 0;
+
+        function updateInput(value) {
+            currentInput += value; 
+            document.getElementById("input").value = currentInput; 
+        }
+
+        function calculateResult() {
+            try {
+                // Evaluate the input
+                const result = eval(currentInput.replace(/π/g, 'Math.PI').replace(/e/g, 'Math.E'));
+                document.getElementById("input").value = result; 
+                currentInput = ""; 
+            } catch (error) {
+                document.getElementById("input").value = "Error"; 
+                currentInput = ""; 
+            }
+        }
+
+        function clearInput() {
+            currentInput = ""; 
+            document.getElementById("input").value = ""; 
+        }
+
+        function clearEntry() {
+            currentInput = currentInput.slice(0, -1);
+            document.getElementById("input").value = currentInput;
+        }
+
+        function memoryAdd() {
+            try {
+                const result = eval(currentInput.replace(/π/g, 'Math.PI').replace(/e/g, 'Math.E'));
+                memoryValue += result;
+                clearInput();
+            } catch (error) {
+                document.getElementById("input").value = "Error"; 
+                currentInput = ""; 
+            }
+        }
+
+        function memorySubtract() {
+            try {
+                const result = eval(currentInput.replace(/π/g, 'Math.PI').replace(/e/g, 'Math.E'));
+                memoryValue -= result;
+                clearInput();
+            } catch (error) {
+                document.getElementById("input").value = "Error"; 
+                currentInput = ""; 
+            }
+        }
+
+        function memoryRecall() {
+            document.getElementById("input").value = memoryValue;
+            currentInput = ""; // Clear the current input after recalling memory
+        }
+
+        function memoryClear() {
+            memoryValue = 0;
+        }
+
+        const numberButtons = document.querySelectorAll('#main-div button[data-number]');
+        numberButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateInput(button.getAttribute('data-number'));
+            });
+        });
+
+        const operationButtons = document.querySelectorAll('#main-div button[data-operation]');
+        operationButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const operation = button.getAttribute('data-operation');
+                if (operation === '=') {
+                    calculateResult();
+                } else if (operation === 'AC') {
+                    clearInput();
+                } else if (operation === 'CE') {
+                    clearEntry();
+                } else if (operation === 'M+') {
+                    memoryAdd();
+                } else if (operation === 'M-') {
+                    memorySubtract();
+                } else if (operation === 'MR') {
+                    memoryRecall();
+                } else if (operation === 'MC') {
+                    memoryClear();
+                } else {
+                    updateInput(operation);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
